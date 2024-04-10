@@ -1,0 +1,35 @@
+#!/bin/bash
+#SBATCH --time=0-12:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH -o "slurm-%N.%j.out" # STDOUT
+#SBATCH -e "slurm-%N.%j.err" # STDERR
+
+
+# Load required modules
+module purge
+module load foss/2022a
+module load Python/3.10.4
+module load mpi4py/3.1.4
+
+# Launch multiple process python code
+echo "Running on 1 node 8 cores"
+time mpirun -np 8 python assignment.py "twitter-100gb.json"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                [ Read 17 lines ]
+^G Help         ^O Write Out    ^W Where Is     ^K Cut          ^T Execute	^C Location     M-U Undo
+^X Exit         ^R Read File    ^\ Replace	^U Paste        ^J Justify	^_ Go To Line   M-E Redo
